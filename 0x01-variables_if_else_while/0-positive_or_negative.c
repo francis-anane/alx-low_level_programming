@@ -4,7 +4,6 @@
 /**
  * main - Prints out a random number
  * @n: Stores a random integer value
- * 
  * Description: Stores a random number in the variable n and prints out the
  * the value.
  * Return: Returns an integer value 0
