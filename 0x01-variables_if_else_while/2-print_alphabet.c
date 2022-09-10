@@ -13,7 +13,10 @@ int main(void)
 	int i;
 
 	for (i = 0; i <= size; i++)
-		putchar(alp[i]);
+	{
+		if(alp[i] != '\0')
+			putchar(alp[i]);
+	}
 	putchar('\n');
 	return (0);
 }
