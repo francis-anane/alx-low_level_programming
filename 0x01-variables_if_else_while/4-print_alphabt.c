@@ -7,12 +7,12 @@
 int main(void)
 {
 	/*store array of lower case alphabets*/
-	char lo[] = "abcdfghijklmnoprstuvwxyz\0";
+	char lo[] = "abcdfghijklmnoprstuvwxyz";
 	/*get size of the array*/
-	int size = 24;
+	int size = sizeof lo;
 	int i;
 
-	for (i = 0; i <= size; i++)
+	for (i = 0; i < size; i++)
 		putchar(lo[i]);
 	putchar('\n');
 	return (0);
