@@ -7,18 +7,17 @@
 int main(void)
 {
 	/*store array of lower case alphabets*/
-	char loc[] = "abcdefghijklmnopqrstuvwxyz";
+	char lo[] = "abcdefghijklmnopqrstuvwxyz";
 	/*store array of upper case alphabets*/
-	char upc[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+	char up[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	/*get size of the array*/
 	int size = 26;
 	int i;
 
 	for (i = 0; i <= size; i++)
-	{
-		putchar(loc[i]);
-		putchar(upc[i]);
-	}
+		putchar(lo[i]);
+	for (i = 0; i <= size; i++)
+		putchar(up[i]);
 	putchar('\n');
 	return (0);
 }
