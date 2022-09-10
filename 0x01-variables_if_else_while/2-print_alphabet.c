@@ -9,7 +9,7 @@ int main(void)
 	/*store array of alphabeths*/
 	char alp[] = "abcdefghijklmnopqrstuvwxyz";
 	/*get size of the array*/
-	int size = sizeof(alp);
+	int size = 26;
 	int i;
 
 	for (i = 0; i <= size; i++)
