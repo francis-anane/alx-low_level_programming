@@ -9,7 +9,7 @@ int main(void)
 	/*store array of lower case alphabets*/
 	char loc[] = "abcdefghijklmnopqrstuvwxyz";
 	/*store array of upper case alphabets*/
-	char upc = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+	char upc[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 	/*get size of the array*/
 	int size = 26;
 	int i;
