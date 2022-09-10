@@ -6,17 +6,11 @@
   */
 int main(void)
 {
-	/*store array of alphabeths*/
-	char alp[] = "abcdefghijklmnopqrstuvwxyz";
-	/*get size of the array*/
-	int size = 26;
-	int i;
+	/*store lower case letters*/
+	char alp;
 
-	for (i = 0; i <= size; i++)
-	{
-		if(alp[i] != '\0')
-			putchar(alp[i]);
-	}
+	for (alp = 'a'; alp <= 'z'; alp++)
+		putchar(alp[i]);
 	putchar('\n');
 	return (0);
 }

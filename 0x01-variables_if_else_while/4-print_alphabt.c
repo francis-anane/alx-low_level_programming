@@ -6,14 +6,14 @@
 */
 int main(void)
 {
-	/*store array of lower case alphabets*/
-	char lo[] = "abcdfghijklmnoprstuvwxyz";
-	/*get size of the array*/
-	int size = sizeof(lo) / sizeof(lo[0]);
-	int i;
+	/*Stores lower case alphabet*/
+	char alphabet;
 
-	for (i = 0; i < size; i++)
-		putchar(lo[i]);
+	for (alphabet = 'a'; alphabet <= 'z'; alphabet++)
+	{
+		if(alphabet != 'e' && alphabet != 'q')
+			putchar(alphabet);
+	}
 	putchar('\n');
 	return (0);
 }

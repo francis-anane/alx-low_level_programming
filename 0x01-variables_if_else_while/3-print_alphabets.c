@@ -6,18 +6,15 @@
   */
 int main(void)
 {
-	/*store array of lower case alphabets*/
-	char lo[] = "abcdefghijklmnopqrstuvwxyz";
-	/*store array of upper case alphabets*/
-	char up[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	/*get size of the array*/
-	int size = 26;
-	int i;
+	/*store low case alphabets*/
+	char lo_case;
+	/*store upper case alphabets*/
+	char up_case;
 
-	for (i = 0; i <= size; i++)
-		putchar(lo[i]);
-	for (i = 0; i <= size; i++)
-		putchar(up[i]);
+	for (lo_case = 'a'; lo_case <= 'z'; lo_case++)
+		putchar(lo_case);
+	for (up_case = 'A'; up_case <= 'Z'; up_case++)
+		putchar(up_case);
 	putchar('\n');
 	return (0);
 }
