@@ -7,12 +7,13 @@
 int main(void)
 {
 	/*store array of alphabeths*/
-	char c[26] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+	char alp[] = "abcdefghijklmnopqrstuvwxyz";
 	/*get size of the array*/
-	int size = sizeof(c) / sizeof(c[0]);
-	int i = 0;
-	for (; i <= size; i++)
-		putchar(c[i]);
+	int size = sizeof(alp);
+	int i;
+
+	for (i = 0; i <= size; i++)
+		putchar(alp[i]);
 	putchar('\n');
 	return (0);
 }
