@@ -9,20 +9,20 @@ int main(void)
 {
 	/*store c types*/
 	char ch;
-	short sh;
 	int in;
 	float fl;
 	long lo;
+	double d;
 	/*store size*/
 	int size;
 
 	size = sizeof(ch);
 	printf("Size of a char: %d byte(s)\n", size);
-	size = sizeof(sh);
-	printf("Size of an int: %d byte(s)\n", size);
 	size = sizeof(in);
-	printf("Size of a long int: %d byte(s)\n", size);
+	printf("Size of an int: %d byte(s)\n", size);
 	size = sizeof(lo);
+	printf("Size of a long int: %d byte(s)\n", size);
+	size = sizeof(d);
 	printf("Size of a long long int: %d byte(s)\n", size);
 	size = sizeof(fl);
 	printf("Size of a float: %d byte(s)\n", size);
