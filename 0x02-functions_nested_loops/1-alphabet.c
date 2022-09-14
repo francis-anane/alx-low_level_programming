@@ -11,19 +11,9 @@
  */
 void print_alphabet(void)
 {
-<<<<<<< HEAD
 	char c;
 
 	for (c = 'a'; c <= 'z'; c++)
 		_putchar(c);
-
 	_putchar('\n');
-=======
-        char c;
-
-        for (c = 'a'; c <= 'z'; c++)
-                _putchar(c);
-
-        _putchar('\n');
->>>>>>> c1f12ea507d2c365b1a8470323d189cf329d3b5a
 }
