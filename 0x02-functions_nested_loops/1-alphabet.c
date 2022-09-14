@@ -12,7 +12,7 @@
 void main(void)
 {
 	/*store alphabets*/
-	char c;
+	short c;
 	for (c = 'a'; c <= 'z'; c++)
 		_putchar(c);
 	_putchar('\n');
