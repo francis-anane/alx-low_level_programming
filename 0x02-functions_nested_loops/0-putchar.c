@@ -1,7 +1,7 @@
-/**
+/*
+ * File: 0-putchar.c
  * Author: Francis Ofori Anane
  * Date:13/09/2022
- * File: 0-putchar.c
  */
 #include<stdio.h>
 /**
