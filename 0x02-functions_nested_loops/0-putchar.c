@@ -3,7 +3,7 @@
  * Author: Francis Ofori Anane
  * Date:13/09/2022
  */
-#include<stdio.h>
+#include "main.h"
 /**
  * main - entry point
  * Description: Prints out the string _putchar
@@ -11,13 +11,14 @@
  */
 int main(void)
 {
-	/*store some string*/
-	char s[] = "_putchar";
-	int size = sizeof(s);
-	int i;
-
-	for (i = 0;  i <= size;  i++)
-		putchar(s[i]);
-	putchar('\n');
+	_putchar('_');
+	_putchar('p');
+	_putchar('u');
+	_putchar('t');
+	_putchar('c');
+	_putchar('h');
+	_putchar('a');
+	_putchar('r');
+	_putchar('\n');
 	return (0);
 }
