@@ -12,9 +12,10 @@
 int main(void)
 {
 	/*store some string*/
-	char s[] ="_putchar";
+	char s[] = "_putchar";
 	int size = sizeof(s);
 	int i;
+
 	for (i = 0;  i <= size;  i++)
 		putchar(s[i]);
 	putchar('\n');
