@@ -33,7 +33,7 @@ int main(void)
 	fib1_half2 = fib1 % 10000000000;
 	fib2_half2 = fib2 % 10000000000;
 
-	for (counter i 93; counter < 99; counter++)
+	for (counter = 93; counter < 99; counter++)
 	{
 		half1 = fib1_half1 + fib2_half1;
 		half2 = fib1_half2 + fib2_half2;
@@ -44,7 +44,7 @@ int main(void)
 		}
 
 		printf("%lu%lu", half1, half2);
-		if (counter !i 98)
+		if (counter !98)
 			printf(", ");
 
 		fib1_half1 = fib2_half1;
