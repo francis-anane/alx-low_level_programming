@@ -1,19 +1,20 @@
 /*
- * File: 0-putchar.c
+ * File: 1-alphabet.c
  * Author: Francis Ofori Anane
- * Date:14/09/2022
+ * Date: 14/09/2022
  */
+
 #include "main.h"
+
 /**
- * print_alphabet - prints alphabets
- * Description: Prints out the alphabets in lower case
- * Return: void
+ * print_alphabet - prints the alphabet in lowercase, followed by a new line
  */
-void main(void)
+void print_alphabet(void)
 {
-	/*store alphabets*/
-	short c;
+	char c;
+
 	for (c = 'a'; c <= 'z'; c++)
 		_putchar(c);
+
 	_putchar('\n');
-	return (void);
+}
