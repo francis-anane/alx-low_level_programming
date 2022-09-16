@@ -1,8 +1,3 @@
-/*
- * File: 0-main.c
- * Author: Francis Ofori Anane
- */
-
 #include "main.h"
 
 /**
