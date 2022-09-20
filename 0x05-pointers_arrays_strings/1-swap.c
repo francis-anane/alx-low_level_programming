@@ -12,7 +12,12 @@
 
 void swap_it(int *a, int *b)
 {
-	a = &b;
-	b = &a;
+	int n;
+	int m;
+	
+	n = *a;
+	m = *b;
+	*a = m;
+	*b = n;
 }
 
