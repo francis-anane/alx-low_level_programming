@@ -13,11 +13,7 @@
 
 int _strlen(char *s)
 {
-	int len;
-	char c[] = *s;
-
-	for(len = 0; len <= sizeof(c); len++)
-		_putchar(c[len]);
+	int len = sizeof(*s);
 	
 	return (len);
 
