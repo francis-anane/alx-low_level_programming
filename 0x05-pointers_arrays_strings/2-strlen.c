@@ -9,14 +9,13 @@
 /**
   * _strlen - Returns the length of a string
   * @s: The string
+  *
+  * Return: int (length of s)
   */
 
 int _strlen(char *s)
 {
 	int len = sizeof(*s);
-	
+
 	return (len);
-
 }
-
-
