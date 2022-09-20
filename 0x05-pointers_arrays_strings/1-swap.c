@@ -4,6 +4,8 @@
  * Date: 20/09/2022
  */
 
+#include "main.h"
+
 /**
   * swap_int - swaps the values of two integers.
   * @a: The first integer
