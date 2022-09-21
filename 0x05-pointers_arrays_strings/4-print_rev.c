@@ -12,7 +12,7 @@
  */
 void print_rev(char *s)
 {
-	int len = sizeof (s);
+	int len = sizeof(s);
 	int i;
 
 	for (i = len - 1; i >= 0; i--)
