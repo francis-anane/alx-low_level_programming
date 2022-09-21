@@ -15,7 +15,10 @@
 
 int _strlen(char *s)
 {
-	int size = sizeof(s);
+	int len = 0;
+	
+	while(*s++)
+		len++
 
-	return (size);
+	return (len);
 }
