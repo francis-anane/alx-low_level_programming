@@ -1,5 +1,5 @@
 /*
- * File: 4-print_rev.c
+ * File: 3-puts.c
  * Author: Francis Ofori Anane
  * Date: 20/09/2022
  */
@@ -8,12 +8,14 @@
 
 /**
  * print_rev - Prints a string in reverse.
- * @s: The string.
+ * @s: string to be reserved.
  */
 void print_rev(char *s)
 {
-	int len = sizeof(s);
-	int i;
+	int len = 0, i;
+
+	while (s[i++])
+		len++;
 
 	for (i = len - 1; i >= 0; i--)
 		_putchar(s[i]);
