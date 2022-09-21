@@ -14,7 +14,7 @@
  */
 char *strcat(char *dest, const char *src)
 {
-	int i = 0, 
+	int i = 0;
 	int d_len = 0;
 
 	while (dest[i++])
