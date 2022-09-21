@@ -15,7 +15,10 @@
 
 int _strlen(char *s)
 {
-	int len = sizeof(*s);
+	int i;
+	char c[] = s;
+	
+	for (i = 0; c[i] != '\0'; i++);
 
-	return (len);
+	return (i);
 }
