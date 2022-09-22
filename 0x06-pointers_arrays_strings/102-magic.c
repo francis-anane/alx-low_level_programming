@@ -1,8 +1,3 @@
-/*
- * Author: Francis Ofori Anane
- * Date: 21/09/2022
- */
-
 #include <stdio.h>
 
 int main(void)
