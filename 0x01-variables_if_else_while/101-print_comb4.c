@@ -19,12 +19,14 @@ int main(void)
 					putchar(j);
 					putchar(k);
 
-					if (j == 57 && i == 56)
+					if (k == 57 && j == 56 && i == 55)
 						break;
+
 					putchar(',');
 					putchar(' ');
 				}
 
 	putchar('\n');
+	
 	return (0);
 }
