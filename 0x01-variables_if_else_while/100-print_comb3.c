@@ -17,10 +17,11 @@ int main(void)
 				putchar(i);
 				putchar(j);
 
-				if (j == 57 && i == 57)
+				if (j == 57 && i == 56)
 					break;
 				putchar(',');
 				putchar(' ');
 			}
+	putchar('\n');
 	return (0);
 }
