@@ -19,7 +19,7 @@ void puts2(char *str)
 	{
 		if(i == 0)
 			_putchar(str[i]);
-		if(i > 0)
+		else if(i > 0)
 			_putchar(str(i+1);
 		i++;
 	}
