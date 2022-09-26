@@ -16,7 +16,8 @@ void print_array(int *a, int n)
 {
 	int i;
 	int size = sizeof(a);
-	if(n > size)
+	
+	if (n > size || n < size)
 		n = size;
 
 	for (i = 0; i <= n - 1; i++)
