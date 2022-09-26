@@ -1,5 +1,4 @@
 /*
- * File: 6-puts2.c
  * Author: Francis Ofori Anane
  * Date: 20/09/2022
  */
@@ -11,6 +10,7 @@
  * with the first character, followed by a new line
  * @str: The string containing the characters.
  */
+
 void puts2(char *str)
 {
 	int i, len;
@@ -22,8 +22,8 @@ void puts2(char *str)
 		len++;
 		i++;
 	}
-	
-	for ( i = 0; i < len; i+=2)
+
+	for (i = 0; i < len; i += 2)
 		_putchar(str[i]);
 
 	_putchar('\n');
