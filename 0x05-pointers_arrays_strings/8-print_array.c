@@ -3,7 +3,7 @@
  * Date: 25/09/2022
  */
 
-#include "main.h"
+#include <stdio.h>
 
 /**
   * print_array - prints elements of an array of integers, followed 
