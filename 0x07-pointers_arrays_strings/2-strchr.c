@@ -4,6 +4,7 @@
  */
 
 #include "main.h"
+
 /**
   * _strchr - returns a pointer to the first occurrence of the
   * character c in the string s.
@@ -15,25 +16,16 @@
 
 char *_strchr(char *s, char c)
 {
-	int i, len;
+	int i;
 
-	i = len = 0;
+	i = 0;
 
 	while (s[i] != '\0')
 	{
-		i++;
-		len++;
-	}
-
-	for (i = 0; i < len; i++)
-	{
 		if (s[i] == c)
 			return (s + i);
-
-		else if (i == len - 1 && s[i] != c)
-			s = 0;
-
+		i++;
 	}
 
-	return (s);
+	return ('\0');
 }
