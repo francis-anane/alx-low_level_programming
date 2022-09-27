@@ -15,7 +15,7 @@
 
 char *_strchr(char *s, char c)
 {
-	char *null = '\0';
+	char *null = 0;
 	int i, len;
 
 	i = len = 0;
