@@ -15,25 +15,25 @@
   */
 
 char *_strchr(char *s, char c)
-{	
+{
 	char *null = NULL;
 	int i, len;
+
 	i = len = 0;
 
-
-	while(s[i] != '\0')
-	{	
+	while (s[i] != '\0')
+	{
 		i++;
 		len++;
 	}
 
-	for(i = 0; i < len; i++)
+	for (i = 0; i < len; i++)
 	{
-		if(s[i] == c)
-			return (s+i);
-		else if (i == len -1 && s[i] != c)
+		if (s[i] == c)
+			return (s + i);
+
+		else if (i == len - 1 && s[i] != c)
 			return (null);
 
 	}
-
 }
