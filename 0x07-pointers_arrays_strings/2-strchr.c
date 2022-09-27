@@ -15,7 +15,6 @@
 
 char *_strchr(char *s, char c)
 {
-	char *null = 0;
 	int i, len;
 
 	i = len = 0;
@@ -31,10 +30,10 @@ char *_strchr(char *s, char c)
 		if (s[i] == c)
 			return (s + i);
 
-		/*else if (i == len - 1 && s[i] != c)*/
-		/*	return (null);*/
+		else
+			s = '\0';
 
 	}
 
-	return (null);
+	return (s);
 }
