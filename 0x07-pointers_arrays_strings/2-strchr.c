@@ -6,32 +6,34 @@
 #include "main.h"
 
 /**
-  * _memcpy - Copies  @n bytes from memory area @src to memory area @dest.
-  * @dest: The memory area to be copied to.
-  * @src: The memory area to be copied from.
-  * @n: The number of bytes to be copied.
-  * Return: A poiter to @dest
+  * _strchr - returns a pointer to the first occurrence of the
+  * character c in the string s.
+  * @s: The string to search character from.
+  * @c: The character to search.
+  * Return: A pointer to the character to search. Or NULL if character
+  * is not found.
   */
 
 char *_strchr(char *s, char c)
 {	
-	char *b;
-	char *null = '\0';
-	int i = 0;
+	char *null = NULL;
+	int i, len;
+	i = len = 0;
 
 
 	while(s[i] != '\0')
 	{	
-		if (s[i] == c)
-		{
-			b = &s[i];
-			return (b);
-		}
-		else
-			return (null);
 		i++;
+		len++;
 	}
 
-	return (b);
+	for(i = 0; i < len; i++)
+	{
+		if(s[i] == c)
+			return (s+i);
+		else if (i == len -1 && s[i] != c)
+			return (null);
+
+	}
 
 }
