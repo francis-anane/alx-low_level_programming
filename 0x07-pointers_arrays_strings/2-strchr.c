@@ -30,7 +30,7 @@ char *_strchr(char *s, char c)
 		if (s[i] == c)
 			return (s + i);
 
-		else
+		else if (i == len - 1 && s[i] != c)
 			s = 0;
 
 	}
