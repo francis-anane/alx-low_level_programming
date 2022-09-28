@@ -15,7 +15,7 @@
 
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int bytes;
+	unsigned int bytes = 0;
 
 	while (*s)
 	{
