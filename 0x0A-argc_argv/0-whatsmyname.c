@@ -2,7 +2,7 @@
  * Author: Francis Ofori Anane
  * Date: 30/09/2022
  */
-
+#include <stdio.h>
 /**
   * main - entry point
   * Desc: Prints the name of the program followed by a new line.
