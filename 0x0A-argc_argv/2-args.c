@@ -1,9 +1,10 @@
-
 /*
  * Author: Francis Ofori Anane
  * Date: 30/09/2022
  */
+
 #include <stdio.h>
+
 /**
   * main - entry point
   * Desc: Prints all the arguments passed at command line.
@@ -15,8 +16,8 @@
 int main(int argc, char *argv[])
 {
 	int i = 0;
-	
-	while(i < argc)
+
+	while (i < argc)
 	{
 		printf("%s\n", argv[i]);
 
