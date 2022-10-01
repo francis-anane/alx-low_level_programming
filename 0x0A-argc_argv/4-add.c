@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 		else
 		{
 			if ((atoi(argv[i])) >= 0)
-				sum += (atoi(argv[i]));
+				sum += (unsigned int) (atoi(argv[i]));
 		}
 	}
 
