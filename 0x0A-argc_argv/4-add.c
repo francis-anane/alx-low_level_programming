@@ -20,20 +20,12 @@
 int main(int argc, char *argv[])
 {
 	int i;
-	unsigned int sum = 0;
-
-
-	if (argc == 1)
-	{
-		printf("%d\n", sum);
-
-		return (0);
-	}
+	int sum = 0;
 
 	for (i = 1; i <= argc - 1; i++)
 	{
 
-		if ((*argv[i] != '-') && (*argv[i] < '0' || *argv[i] > '9'))
+		if (*argv[i] < '0' || *argv[i] > '9')
 		{
 			printf("Error\n");
 			return (1);
@@ -42,7 +34,7 @@ int main(int argc, char *argv[])
 		else
 		{
 			if ((atoi(argv[i])) >= 0)
-				sum += (unsigned int) (atoi(argv[i]));
+				sum += (atoi(argv[i]));
 		}
 	}
 
