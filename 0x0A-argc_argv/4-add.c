@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 	for (i = 1; i <= argc - 1; i++)
 	{
 		digit = argv[i];
-		while(*digits)
+		while(*digit)
 		{
 			if (*digit < '0' || *digit > '9')
 			{	
@@ -41,7 +41,6 @@ int main(int argc, char *argv[])
 		if ((atoi(argv[i])) >= 0)
 			sum += (atoi(argv[i]));
 	}
-
 
 	printf("%d\n", sum);
 
