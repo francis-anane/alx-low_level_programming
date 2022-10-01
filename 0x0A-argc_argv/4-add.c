@@ -20,22 +20,26 @@
 int main(int argc, char *argv[])
 {
 	int i;
+	char *digit;
+
 	int sum = 0;
 
 	for (i = 1; i <= argc - 1; i++)
 	{
-
-		if (*argv[i] < '0' || *argv[i] > '9')
+		digit = argv[i];
+		while(*digits)
 		{
-			printf("Error\n");
-			return (1);
+			if (*digit < '0' || *digit > '9')
+			{	
+				printf("Error\n");
+				return (1);
+			}
+
+			digit++;
 		}
 
-		else
-		{
-			if ((atoi(argv[i])) >= 0)
-				sum += (atoi(argv[i]));
-		}
+		if ((atoi(argv[i])) >= 0)
+			sum += (atoi(argv[i]));
 	}
 
 
