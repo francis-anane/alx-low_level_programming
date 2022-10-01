@@ -32,15 +32,15 @@ int main(int argc, char *argv[])
 	for (i = 1; i <= argc - 1; i++)
 	{
 
-		if((*argv[i] != '-') && (*argv[i] < '0' || *argv[i] > '9'))
+		if ((*argv[i] != '-') && (*argv[i] < '0' || *argv[i] > '9'))
 		{
 			printf("Error\n");
-			return (0);
+			return (1);
 		}
 
 		else
 		{
-			if((atoi(argv[i])) >= 0 )
+			if ((atoi(argv[i])) >= 0)
 				sum += (atoi(argv[i]));
 		}
 	}
