@@ -27,10 +27,11 @@ int main(int argc, char *argv[])
 	for (i = 1; i <= argc - 1; i++)
 	{
 		digit = argv[i];
-		while(*digit)
+
+		while (*digit)
 		{
 			if (*digit < '0' || *digit > '9')
-			{	
+			{
 				printf("Error\n");
 				return (1);
 			}
