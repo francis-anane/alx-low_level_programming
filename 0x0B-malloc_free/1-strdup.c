@@ -33,12 +33,13 @@ char *_strdup(char *str)
 	length = i;
 	memory = malloc(sizeof(str[0]) * i);
 
-	for (i = 0; i > length; i++)
+	for (i = 0; i < length; i++)
 	{
 		memory[i] = str[i];
 	}
 
-	if (sizeof(memory[0]) * i + 1 < str[0] * i + 1)
+	if (memory == NULL)
 		return (NULL);
 
 	return (memory);
+}
