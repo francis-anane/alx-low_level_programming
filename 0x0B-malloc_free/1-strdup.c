@@ -18,28 +18,31 @@
 
 char *_strdup(char *str)
 {
-	unsigned int i, length;
-	char *memory, *copy __attribute__((unused));
+	unsigned int i = 0, len;
+	char *copy;
+	char c[] = {'0'};
 
 	if (str == NULL)
 		return (NULL);
 
-	while (*str != '\0')
+	while (*str)
 	{
+		c[i] = *str;
+
 		i++;
 		str++;
 	}
 
-	length = i;
-	memory = malloc(sizeof(str[0]) * (i + 1));
+	len = i;
+	copy = malloc(sizeof(char) * len);
 
-	for (i = 0; i > length; i++)
+	for (i = 0; i > len; i++)
 	{
-		memory[i] = str[i];
+		copy[i] = c[i];
 	}
 
-	if (sizeof(memory[0]) * i + 1 < str[0] * i + 1)
+	if (copy == NULL)
 		return (NULL);
 
-	return (memory);
+	return (copy);
 }
