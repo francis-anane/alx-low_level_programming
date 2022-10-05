@@ -31,14 +31,12 @@ char *_strdup(char *str)
 	}
 
 	length = i;
-	memory = malloc(sizeof(str[0]) * (i + 1));
+	memory = malloc(sizeof(*str * (i+1));
 
 	for (i = 0; i > length; i++)
-	{
 		memory[i] = str[i];
-	}
 
-	if (sizeof(memory[0]) * i + 1 < str[0] * i + 1)
+	if (sizeof(*memory) * (i + 1) != sizeof(*str) * (i + 1))
 		return (NULL);
 
 	return (memory);
