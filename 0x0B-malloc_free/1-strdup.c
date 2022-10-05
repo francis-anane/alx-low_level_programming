@@ -41,7 +41,7 @@ char *_strdup(char *str)
 
 	}
 
-	if (sizeof(*copy) * length != sizeof(*str) * length)
+	if (sizeof(copy[0]) * length != sizeof(str[0]) * length)
 		return (NULL);
 
 	return (copy);
