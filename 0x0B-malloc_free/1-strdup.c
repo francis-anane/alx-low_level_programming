@@ -33,7 +33,7 @@ char *_strdup(char *str)
 	for (i = 0; i < length; i++)
 		copy[i] = str[i];
 
-	if (copy == NULL)
+	if (sizeof(copy[0]) * length + 1 < str[i] * length)
 		return (NULL);
 
 	return (copy);
