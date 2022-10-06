@@ -18,7 +18,7 @@
 
 char *_strdup(char *str)
 {
-	int i, length = 0;
+	unsigned int i, length = 1;
 	char *copy;
 
 	if (str == NULL)
