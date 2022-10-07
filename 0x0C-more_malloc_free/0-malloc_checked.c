@@ -7,7 +7,7 @@
 #include <stdlib.h>
 
 /**
- * malloc_checked - Allocates memory using 
+ * malloc_checked - Allocates memory using
  * malloc
  *
  * @b: The size of bytes to allocate.
