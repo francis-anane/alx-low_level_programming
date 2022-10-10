@@ -24,21 +24,18 @@
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	unsigned int i;
-	char *mem = malloc(size * nmemb);
-
+	char *array;
+	
 	if (nmemb == 0 || size == 0)
-	{
-		for(i = 0; i < (size * nmemb); i++)
-				mem[i] = '0';
-
 		return (NULL);
-	}
-
-
+	
+	char *mem = malloc(size * nmemb);
+	
 	if (mem == NULL)
 		return (NULL);
 
+	for (i = 0; i < (size * nmemb); i++)
+				mem[i] = '0';
 	return (mem);
-
 }
 
