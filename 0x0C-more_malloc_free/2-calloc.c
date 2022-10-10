@@ -5,8 +5,6 @@
 
 #include "main.h"
 #include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
 
 /**
  * _calloc - Allocates memory for an array
