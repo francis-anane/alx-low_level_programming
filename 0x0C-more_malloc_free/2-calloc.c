@@ -23,11 +23,11 @@
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 
-	void *mem = malloc(sizeof(size) * nmemb);
+	void *mem = malloc(sizeof(size) * nmemb + 1);
 
 	if (nmemb == 0 || size == 0)
 	{
-		mem = memset(mem, 0, size);
+		mem = memset(mem, '0', size);
 		return (NULL);
 	}
 
