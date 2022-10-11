@@ -28,7 +28,7 @@ int *array_range(int min, int max)
 	if (min > max)
 		return (NULL);
 
-	while(l_digit <= max)
+	while (l_digit <= max)
 	{
 		++len;
 		++l_digit;
