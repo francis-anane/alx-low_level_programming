@@ -6,8 +6,8 @@
 #include "dog.h"
 
 /**
-  * init_dog - initialize a variable of type dog
-
+  * init_dog - initialize a variable of
+  * type dog
   * @d: The dog.
   * @name: The name of the dog.
   * @age: The age of the dog.
