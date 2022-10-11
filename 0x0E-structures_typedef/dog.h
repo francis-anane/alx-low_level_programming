@@ -1,10 +1,10 @@
-/*
- * Author: Francis Ofori Anane
- * Date: 7/10/2022
- */
-
 #ifndef DOG_H
 #define DOG_H
+
+/*
+ * Author: Francis Ofori Anane
+ * Date: 11/10/2022
+ */
 
 /**
   * struct dog - Information of a dog.
