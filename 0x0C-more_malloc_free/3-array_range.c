@@ -22,12 +22,19 @@
 
 int *array_range(int min, int max)
 {
-	int i = 0, *array;
+	int i = 0, len = 0, *array;
+	int l_digit = min;
 
 	if (min > max)
 		return (NULL);
 
-	array = malloc(sizeof(int) * (max - min) + 1);
+	while(l_digit <= max)
+	{
+		++len;
+		++l_digit;
+	}
+
+	array = malloc(sizeof(int) * len);
 	if (array == NULL)
 
 		return (NULL);
