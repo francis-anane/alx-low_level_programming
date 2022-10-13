@@ -3,8 +3,6 @@
  * Date: 13/10/2022
  */
 
-#include <stdlib.h>
-
 /**
  * print_name - Prints a name.
  *
@@ -14,7 +12,7 @@
 
 void print_name(char *name, void (*f)(char *))
 {
-	if (name == NULL)
+	if (!name && !f)
 		return;
 
 	(*f)(name);
