@@ -20,10 +20,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	int num = 0;
 
 	va_list ap;
-
-	/*if (n == 0)
-		return;
-	*/
+	
 	va_start(ap, n);
 
 	for (i = 0; i < n; i++)
