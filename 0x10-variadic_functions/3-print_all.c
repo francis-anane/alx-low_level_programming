@@ -15,24 +15,39 @@
 
 void print_all(const char * const format, ...)
 {
-	unsigned int i;
-	char *str;
+	int len = sizeof (format);
 
 	va_list ap;
 
-	va_start(ap, n);
+	va_start(ap, len);
 
-	for (i = 0; i < n; i++)
+	while (*format)
 	{
-		str = va_arg(ap, char*);
 
-		if (str == NULL)
-			printf("(nil)");
-		else
+		if (*format == 'c')
+		{
+			char str = va_arg(ap, char);
+			printf("%c", str);
+		}
+		else if (*format == 'i')
+		{
+
+			int str = va_arg(ap, int);
+			printf("%d", str);
+		}
+		else if (*format == 'f')
+		{
+
+			float str = va_arg(ap, float);
+			printf ("%f", str);
+		}
+		else if (*format == 's')
+		{
+
+			char *str = va_arg(ap, char*);
 			printf("%s", str);
-
-		if (separator != NULL && i != n - 1)
-			printf("%s", separator);
+		}
+		format++;
 	}
 
 	printf("\n");
