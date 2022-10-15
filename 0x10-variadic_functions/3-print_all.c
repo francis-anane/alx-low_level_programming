@@ -31,11 +31,9 @@ void print_all(const char * const format, ...)
 		}
 		else if (*format == 'i')
 		{
-
 			int str = va_arg(ap, int);
 			printf("%d", str);
 		}
-		else if (*format == 'f')
 		{
 
 			float str = va_arg(ap, float);
