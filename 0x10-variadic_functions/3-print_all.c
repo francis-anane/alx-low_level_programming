@@ -6,6 +6,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * print_all - Prints any data type given as argument.
@@ -15,37 +16,50 @@
 
 void print_all(const char * const format, ...)
 {
-	int len = sizeof (format);
+	int i = 0, len = strlen(format);
 
 	va_list ap;
 
-	va_start(ap, len);
+	va_start(ap, format);
 
-	while (*format)
+	while (i < len)
 	{
 
-		if (*format == 'c')
+		if (format[i] == 'c')
 		{
-			char str = va_arg(ap, char);
-			printf("%c", str);
+			char data_type = va_arg(ap, int);
+			printf("%c", data_type);
 		}
-		else if (*format == 'i')
+		else if (format[i] == 'i')
 		{
-			int str = va_arg(ap, int);
-			printf("%d", str);
+			int data_type = va_arg(ap, int);
+			printf("%d", data_type);
 		}
-		{
-
-			float str = va_arg(ap, float);
-			printf ("%f", str);
-		}
-		else if (*format == 's')
+		else if (format[i] == 'f')
 		{
 
-			char *str = va_arg(ap, char*);
-			printf("%s", str);
+			double data_type = va_arg(ap, double);
+			printf ("%f", data_type);
 		}
-		format++;
+		else if (format[i] == 's')
+		{
+
+			char *data_type = va_arg(ap, char*);
+			if (data_type == NULL)
+				data_type = "(nil)";
+			printf("%s", data_type);
+		}
+
+		while((i < len - 1) && (format[i]
+			== 'c' || format[i] ==
+			'i' || format[i] == 'f'
+		      || format[i] == 's'))
+		{
+			printf(", ");
+			break;
+		}
+
+		i++;
 	}
 
 	printf("\n");
