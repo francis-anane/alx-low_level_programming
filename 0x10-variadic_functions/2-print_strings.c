@@ -6,7 +6,6 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
-
 /**
  * print_strings - Prints strings, followed by a new line.
  *
