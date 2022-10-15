@@ -13,8 +13,6 @@ void print_all(const char * const format, ...)
 	double f;
 	va_list ap;
 
-	if (format == NULL)
-		printf("(nil)");
 	va_start(ap, format);
 	while (i < len)
 	{
@@ -34,6 +32,8 @@ void print_all(const char * const format, ...)
 			break;
 		case 's':
 			s = va_arg(ap, char*);
+			if (format == NULL)
+				s = ("nil");
 			printf("%s", s);
 			break;
 		default:
