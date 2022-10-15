@@ -13,12 +13,13 @@
  */
 void print_all(const char * const format, ...)
 {
-	int i = 0, len = strlen(format);
+	int i = 0, len;
 	va_list ap;
 	char *s;
 
 	if (format != NULL)
 	{
+		len = strlen(format);
 		va_start(ap, format);
 		while (i < len)
 		{
