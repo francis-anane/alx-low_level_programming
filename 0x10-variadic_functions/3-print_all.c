@@ -17,6 +17,9 @@
 void print_all(const char * const format, ...)
 {
 	int i = 0, len = strlen(format);
+	char c, *s;
+	int d;
+	double f;
 
 	va_list ap;
 
@@ -24,35 +27,37 @@ void print_all(const char * const format, ...)
 
 	while (i < len)
 	{
-
-		if (format[i] == 'c')
-		{
-			char data_type = va_arg(ap, int);
-			printf("%c", data_type);
-		}
-		else if (format[i] == 'i')
-		{
-			int data_type = va_arg(ap, int);
-			printf("%d", data_type);
-		}
-		else if (format[i] == 'f')
+		switch(format[i])
 		{
 
-			double data_type = va_arg(ap, double);
-			printf ("%f", data_type);
-		}
-		else if (format[i] == 's')
-		{
+		case 'c':
+			c = va_arg(ap, int);
+			printf("%c", c);
+			break;
 
-			char *data_type = va_arg(ap, char*);
-			if (data_type == NULL)
-				data_type = "(nil)";
-			printf("%s", data_type);
+		case 'i':
+			d = va_arg(ap, int);
+			printf("%d", d);
+			break;
+
+		case 'f':
+			f = va_arg(ap, double);
+			printf ("%f", f);
+			break;
+
+		case 's':
+			s = va_arg(ap, char*);
+			if (s == NULL)
+				s = "(nil)";
+			printf("%s", s);
+			break;
+		default:
+			break;
 		}
 
 		while((i < len - 1) && (format[i]
 			== 'c' || format[i] ==
-			'i' || format[i] == 'f'
+		       'i' || format[i] == 'f'
 		      || format[i] == 's'))
 		{
 			printf(", ");
