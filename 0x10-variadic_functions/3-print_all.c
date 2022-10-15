@@ -1,26 +1,22 @@
-/*
- * Author: Francis Ofori Anane
- * Date: 14/10/2022
- */
+/*Author: Francis Ofori Anane. Date:14 /10/2022*/
 #include <stdarg.h>
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 /**
  * print_all - Prints any data type given as argument.
- *
  * @format: The format of the data type.
  */
 void print_all(const char * const format, ...)
 {
-	int i = 0, len = strlen(format);
+	int d, i = 0, len = strlen(format);
 	char c, *s;
-	int d;
 	double f;
 	va_list ap;
 
+	if (format == NULL)
+		return;
 	va_start(ap, format);
-	while (i < len && format)
+	while (i < len)
 	{
 		switch (format[i])
 		{
@@ -45,9 +41,12 @@ void print_all(const char * const format, ...)
 		default:
 			break;
 		}
-		if ((i < len - 1) && (format[i] == 'c' || format[i] == 'i' ||
+		while ((i < len - 1) && (format[i] == 'c' || format[i] == 'i' ||
 				      format[i] == 'f' || format[i] == 's'))
+		{
 			printf(", ");
+			break;
+		}
 		i++;
 	}
 	printf("\n");
