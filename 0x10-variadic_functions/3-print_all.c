@@ -19,18 +19,6 @@ void print_line(void)
 }
 
 /**
- * print_str - print a string.
- * @s: The string.
- */
-void print_str(char *s)
-{
-	if (s == NULL)
-		printf("(nil)");
-	else
-		printf("%s", s);
-}
-
-/**
  * print_all - Prints any data type given as argument.
  *
  * @format: The format of the data type.
@@ -40,6 +28,7 @@ void print_all(const char * const format, ...)
 {
 	size_t i = 0;
 	va_list ap;
+	char *s;
 
 	if (format == NULL)
 		print_line();
@@ -58,9 +47,10 @@ void print_all(const char * const format, ...)
 			printf("%f", va_arg(ap, double));
 			break;
 		case 's':
-			print_str(va_arg(ap, char*));
-			break;
-		default:
+			s = va_arg(ap, char*);
+			if (s == NULL)
+				s = "(nil)";
+			printf("%s", s);
 			break;
 		}
 		while (i < (strlen(format) - 1) &&
