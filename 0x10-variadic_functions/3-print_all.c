@@ -38,7 +38,7 @@ void print_str(char *s)
 
 void print_all(const char * const format, ...)
 {
-	int i = 0;
+	size_t i = 0;
 	va_list ap;
 
 	if (format == NULL)
