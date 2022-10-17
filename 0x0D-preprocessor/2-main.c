@@ -3,6 +3,8 @@
  * Date: 17/10/2022
  */
 
+#include <stdio.h>
+
 /**
  * main - entry point.
  * Description: Print the name of the sourse file.
