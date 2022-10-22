@@ -45,7 +45,6 @@ list_t *add_node_end(list_t **head, const char *str)
 
 	while (node->next != NULL)
 	{
-		printf("%u %s\n", node->len, node->str);
 		node = node->next;
 	}
 
