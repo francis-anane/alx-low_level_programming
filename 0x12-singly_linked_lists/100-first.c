@@ -5,9 +5,8 @@
 
 #include <stdio.h>
 
-extern void _exit(register int);
 int main(void);
-
+extern void _exit(register int);
 /**
  * _start - Executes and print something * before main is executed.
  *
@@ -16,7 +15,11 @@ int main(void);
 
 int _start(void)
 {
-	printf("You're beat! and yet, you must allow,\\nI bore my house upon myback!\\n\n");
+	char *str0 = "You're beat! ";
+	char *str1 = "and yet, you must allow,";
+	char *str2 = "\nI bore my house upon my back!\n";
+
+	printf("%s%s%s", str0, str1, str2);
 
 	main();
 	_exit(0);
