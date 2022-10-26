@@ -15,11 +15,15 @@
 
 void free_listint(listint_t *head)
 {
+	int *ptr;
+
 	if (head == NULL)
 		return;
 
 	while (head != NULL)
 	{
+		ptr = &head->n;
+		free(ptr);
 		free(head);
 		head = head->next;
 	}
