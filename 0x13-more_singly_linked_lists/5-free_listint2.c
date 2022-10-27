@@ -8,22 +8,23 @@
 #include <stdlib.h>
 
 /**
- * free_listint - Frees a listint_t list.
+ * free_listint2 - Frees a listint_t list.
  *
  * @head: The list to free.
  */
 
-void free_listint2(listint_t *head)
+void free_listint2(listint_t **head)
 {
+	listint_t *h_node = *head;
 	listint_t *node;
 
-	if (head == NULL)
+	if (h_node == NULL)
 		return;
 
-	while (head != NULL)
+	while (h_node != NULL)
 	{
-		node = head->next;
-		free(head);
-		head = node;
+		node = h_node->next;
+		free(h_node);
+		h_node = node;
 	}
 }
