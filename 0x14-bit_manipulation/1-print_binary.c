@@ -12,7 +12,7 @@
 
 void print_binary(unsigned long int n)
 {
-	unsigned long int tmp = n, msk_val = 8192, len = 0;
+	unsigned long int tmp = n, msk_val = 32768, len = 0;
 
 	if (n == 0)
 	{
