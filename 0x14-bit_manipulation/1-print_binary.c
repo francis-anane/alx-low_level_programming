@@ -20,10 +20,10 @@ void print_binary(unsigned long int n)
 		return;
 	}
 	if (n == 1)
-        {
-                _putchar('1');
-                return;
-        }
+	{
+		_putchar('1');
+		return;
+	}
 
 	while (msk_val > 0)
 	{
@@ -35,5 +35,4 @@ void print_binary(unsigned long int n)
 
 		msk_val = msk_val >> 1;
 	}
-
 }
