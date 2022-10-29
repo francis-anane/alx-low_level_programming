@@ -3,8 +3,7 @@
  * Date: 29/10/2022
  */
 
-#include <string.h>
-
+#include "main.h"
 /**
  * print_binary - Prints the binary representation of a number.
  *
@@ -28,11 +27,11 @@ void print_binary(unsigned long int n)
 
 	while (msk_val > 0)
 	{
-		if (n & msk_val == 0)
+		if ((n & msk_val) == 0)
 			_putchar('0');
 
-		if (n & msk_val == 1)
-                        _putchar('1');
+		else
+			_putchar('1');
 
 		msk_val = msk_val >> 1;
 	}
