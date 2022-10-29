@@ -6,10 +6,10 @@
 #include <string.h>
 
 /**
- * pow - calculate num raised to the power of p.
+ * _pow - calculate num raised to the power of p.
  *
  * @base: The base number.
- * @p: The exponent.
+ * @e: The exponent.
  *
  * Return: num raised to the power of p.
  */
@@ -57,7 +57,7 @@ unsigned int binary_to_uint(const char *b)
 		if (b[i] != '0' && b[i] != '1')
 			return (0);
 
-		num += bit *  _pow(2, exp-1);
+		num += bit *  _pow(2, exp - 1);
 		exp--;
 	}
 	return (num);
