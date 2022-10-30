@@ -12,7 +12,7 @@
 
 void print_binary(unsigned long int n)
 {
-	unsigned long int tmp = n, msk_val = 1024, len = 0;
+	unsigned long int  msk_val = 1024;
 
 	if (n == 0)
 	{
@@ -25,13 +25,7 @@ void print_binary(unsigned long int n)
 		return;
 	}
 
-	while(tmp)
-	{
-		tmp >>= 1;
-		len++;
-	}
-
-	while (len > 0)
+	while (msk_val > 0)
 	{
 		if ((n & msk_val) == 0)
 			_putchar('0');
@@ -40,6 +34,5 @@ void print_binary(unsigned long int n)
 			_putchar('1');
 
 		msk_val = msk_val >> 1;
-		len--;
 	}
 }
