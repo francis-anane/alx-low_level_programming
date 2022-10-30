@@ -3,6 +3,7 @@
  * Date: 29/10/2022
  */
 
+#include <stdlib.h>
 #include <stdio.h>
 #include "main.h"
 /**
@@ -13,7 +14,7 @@
 
 void print_binary(unsigned long int n)
 {
-	unsigned int msk_val = 65536;
+	int64_t msk_val = 65536;
 
 	if (n == 0)
 	{
