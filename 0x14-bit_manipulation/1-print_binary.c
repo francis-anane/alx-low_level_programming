@@ -3,6 +3,7 @@
  * Date: 29/10/2022
  */
 
+#include <stdio.h>
 #include "main.h"
 /**
  * print_binary - Prints the binary representation of a number.
@@ -12,7 +13,7 @@
 
 void print_binary(unsigned long int n)
 {
-	int  msk_val = 64;
+	unsigned long int msk_val = 32;
 
 	if (n == 0)
 	{
