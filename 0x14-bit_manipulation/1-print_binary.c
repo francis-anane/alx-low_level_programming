@@ -14,27 +14,15 @@
 
 void print_binary(unsigned long int n)
 {
-	int64_t msk_val = 65536;
-
-	if (n == 0)
+	if (n > 1)
 	{
-		_putchar('0');
-		return;
+		print_binary(n >> 1);
 	}
-	if (n == 1)
+	if (n & 1)
 	{
 		_putchar('1');
-		return;
 	}
+	else
+		_putchar('0');
 
-	while (msk_val > 0)
-	{
-		if ((n & msk_val) == 0)
-			_putchar('0');
-
-		else
-			_putchar('1');
-
-		msk_val = msk_val >> 1;
-	}
 }
