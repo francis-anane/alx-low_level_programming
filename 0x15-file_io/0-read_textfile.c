@@ -9,7 +9,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdlib.h>
-#include <stdio.h>
+
 /**
  * read_textfile - Reads a text file and
  * print it to the POSIX standard output.
@@ -49,5 +49,5 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	close(fd);
 	free(buff);
-	return (bytes);
+	return (letters);
 }
