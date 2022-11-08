@@ -39,7 +39,8 @@ int create_file(const char *filename, char *text_content)
 
 	else
 	{
-		fd = open(filename, 0600, O_CREAT | O_RDWR);
+		/*creat a new file with permission 0600*/
+		fd = creat(filename, 0600);
 
 		close(fexist);
 	}
