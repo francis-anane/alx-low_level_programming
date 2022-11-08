@@ -28,7 +28,7 @@ int create_file(const char *filename, char *text_content)
 	buff = malloc(size + 1);
 	if (buff == NULL)
 		return (-1);
-	if (filename == NULL)
+	if (filename == NULL || text_content == NULL)
 		return (-1);
 
 	fexist = open(filename, O_RDONLY);
