@@ -22,8 +22,11 @@ int create_file(const char *filename, char *text_content)
 {
 	int fd, fexist;
 	int size;
+	char *buff;
 
 	size = strlen(text_content);
+
+	buff = malloc(size + 1);
 
 	if (filename == NULL)
 		return (-1);
@@ -33,7 +36,11 @@ int create_file(const char *filename, char *text_content)
 
 	if (fexist >= 0)
 	{
-		fd = open(filename, O_RDWR | O_APPEND);
+		read(fexist, buff, size);
+		if (strcmp(buff, text_content) != 0)
+			fd = open(filename, O_RDWR | O_APPEND);
+
+		free(buff);
 		close(fexist);
 	}
 
