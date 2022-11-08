@@ -28,36 +28,36 @@ int create_file(const char *filename, char *text_content)
 	buff = malloc(size + 1);
 	if (buff == NULL)
 		return (-1);
-	if (filename == NULL || text_content == NULL)
+	if (filename == NULL)
 		return (-1);
 
 	fexist = open(filename, O_RDONLY);
+	if (text_content == NULL && fexist < 0)
+	{
+		fd = creat(filename, 0600);
+		return (1);
+	}
 	/*open file for writing*/
 
 	if (fexist >= 0)
 	{
 		read(fexist, buff, size);
 		if (strcmp(buff, text_content) != 0)
-			fd = open(filename, O_RDWR | O_APPEND);
+			fd = open(filename, O_CREAT | O_RDWR);
 
 		free(buff);
 		close(fexist);
 	}
-
 	else
 	{
 		/*creat a new file with permission 0600*/
 		fd = creat(filename, 0600);
-
 		close(fexist);
 	}
-
 	if (fd == -1)
 		return (-1);
-
 	/*write text to fd*/
 	write(fd, text_content, size);
-
 	close(fd);
 	return (1);
 }
