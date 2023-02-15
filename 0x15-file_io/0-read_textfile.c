@@ -26,28 +26,29 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
-	size_t bytes;
+	size_t rbytes;
+	size_t wbytes;
 	char *buff;
-
-	/*allocate memory for text buffer*/
-	buff = malloc(letters);
-	if (buff == NULL)
-		return (-1);
 
 	if (filename == NULL)
 		return (0);
 
-	/*open file for reading*/
 	fd = open(filename, O_RDONLY);
-	bytes = read(fd, buff, letters);
+	if (fd == -1)
+		return (0);
 
-	/*write text to standard output*/
-	bytes = write(STDOUT_FILENO, buff, letters);
+	buff = malloc(letters);
+	if (buff == NULL)
+		return (-1);
+	rbytes = read(fd, buff, letters);
 
-	if (bytes != letters)
+	/*write text to POSIX standard output*/
+	wbytes = write(STDOUT_FILENO, buff, rbytes);
+
+	if (rbytes != wbytes)
 		return (0);
 
 	close(fd);
 	free(buff);
-	return (letters);
+	return (wbytes);
 }
