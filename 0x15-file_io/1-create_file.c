@@ -20,12 +20,13 @@
 
 int create_file(const char *filename, char *text_content)
 {
-	int fd, size;
+	int fd, size = 0;
 
 	if (filename == NULL)
 		return (-1);
 
-	size = strlen(text_content);
+	if (text_content != NULL)
+		size = strlen(text_content);
 
 	if (access(filename, F_OK) == 0)
 	{
