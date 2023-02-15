@@ -20,28 +20,27 @@
 
 int create_file(const char *filename, char *text_content)
 {
-	int fd, size, f_exst;
-
-	size = strlen(text_content);
+	int fd, size;
 
 	if (filename == NULL)
 		return (-1);
-	if (text_content != NULL)
-		size = strlen(text_content);
-	f_exst = open(filename, O_RDONLY);
-	fd = open(filename, O_CREAT | O_RDWR);
+
+	size = strlen(text_content);
+
+	if (access(filename, F_OK) == 0)
+	{
+		fd = open(filename, O_RDWR | O_TRUNC);
+	}
+	else
+	{
+		fd = creat(filename, 00600);
+	}
+
 	if (fd < 0)
 		return (-1);
 
-	if (f_exst < 0)
-	{
-		fchmod(fd, 0600);
-		close(f_exst);
-	}
+	write(fd, text_content, size);
 
-	/*write text to fd*/
-	if(text_content != NULL)
-		write(fd, text_content, size);
 	close(fd);
 	return (1);
 }
