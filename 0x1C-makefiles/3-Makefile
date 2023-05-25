@@ -1,8 +1,8 @@
-SRC := main.c school.c
-CC := gcc
-OBJ := $(SRC:.c=.o) #Create .o file(s) from .c file(s) assigned to SRC and assign to OBJ
-RM := rm -f
-NAME := school
+SRC = main.c school.c
+CC = gcc
+OBJ = $(SRC:.c=.o) #Create .o file(s) from .c file(s) assigned to SRC and assign to OBJ
+RM = rm -f
+NAME = school
 
 all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
