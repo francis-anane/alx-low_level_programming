@@ -1,0 +1,3 @@
+# 'all' is the rule (target) and *.c is the prerequisites
+all: main.c school.c
+	gcc main.c school.c -o school #The recipe

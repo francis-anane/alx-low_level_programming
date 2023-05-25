@@ -1,0 +1,5 @@
+CC = gcc # compiler is asigned to the variable CC
+SRC = main.c school.c # source files are asigned to the variable SRC
+
+all: ${SRC}
+	${CC} ${SRC} -o school

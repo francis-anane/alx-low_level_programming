@@ -1,0 +1,19 @@
+SRC := main.c school.c
+CC := gcc
+OBJ := $(SRC:.c=.o) #Create .o file(s) from .c file(s) assigned to SRC and assign to OBJ
+RM := rm -f
+NAME := school
+CFLAGS := -Wall -Werror -Wextra -pedantic
+
+all: $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+
+clean:
+	$(RM) *~ $(NAME)
+
+oclean:
+	$(RM) $(OBJ)
+
+fclean: clean oclean
+
+re: fclean all # clean object files and rebuild
