@@ -15,10 +15,9 @@
 
 void free_listint2(listint_t **head)
 {
-	listint_t *h_node = *head;
-	listint_t *node;
+	listint_t *node, *h_node = *head;
 
-	if (h_node == NULL)
+	if (*head == NULL)
 		return;
 
 	while (h_node != NULL)
@@ -27,4 +26,5 @@ void free_listint2(listint_t **head)
 		free(h_node);
 		h_node = node;
 	}
+	*head = NULL;
 }
