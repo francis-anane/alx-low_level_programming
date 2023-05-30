@@ -14,15 +14,16 @@
 
 int sum_dlistint(dlistint_t *head)
 {
+	dlistint_t *node = head;
 	int sum = 0;
 
-	if (head == NULL)
+	if (node == NULL)
 		return (sum);
 
-	while (head != NULL)
+	while (node)
 	{
-		sum += head->n;
-		head = head->next;
+		sum += node->n;
+		node = node->next;
 	}
 
 	return (sum);
