@@ -2,7 +2,6 @@
  * Author: Francis Ofori Anane
  * Date: 1/04/2023
  */
-
 #include "lists.h"
 
 /**
