@@ -13,28 +13,25 @@
  * @index: The specified index
  * Return: 1 on success or -1 if it fails.
  */
+
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-	dlistint_t *tmp, *node, *prev, *chk;
-	unsigned int i = 0, j = 0;
+	dlistint_t *tmp, *prev;
+	unsigned int i, offset = 0, count;
 
 	if (*head == NULL)
 		return (-1);
 	tmp = *head;
-	chk = *head;
-	while (chk != NULL)
-	{
-		chk = chk->next;
-		i++;
-	}
-	if (index > i || index < j)
+
+	count = count_nodes(tmp);
+
+	if (index > count || index < offset)
 		return (-1);
 
 	if (index == 0)
 	{
-		node = tmp;
-		tmp = tmp->next;
-		*head = tmp;
+		*head = tmp->next;
+		/*(*head)->prev = NULL;*/
 	}
 	else
 	{
@@ -44,10 +41,25 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 				prev = tmp;
 			tmp = tmp->next;
 		}
-		node = tmp;
+		/*node = tmp;*/
 		prev->next = tmp->next;
+		tmp->next->prev = prev;
 	}
-	free(node);
+	free(tmp);
 
 	return (1);
+}
+
+/**
+ * count_nodes - counts the number of nodes * in a dlistint_t.
+ * @h: Pointer to the head node
+ * Return: The number of nodes
+ */
+
+size_t count_nodes(dlistint_t *h)
+{
+	if (h == NULL)
+		return (0);
+	else
+		return (1 + count_nodes(h->next));
 }
