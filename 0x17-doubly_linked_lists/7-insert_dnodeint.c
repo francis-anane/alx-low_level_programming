@@ -20,17 +20,12 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	dlistint_t *new_node, *tmp, *h_node = *h;
 	unsigned int offset = 0, count, i = 0;
 
-	if (*h == NULL && idx != offset)
+	if (*h == NULL)
 		return (NULL);
-
 	new_node = create_dnodeint(n);
-
 	count = count_nodes(h_node);
-
 	if (idx > count || idx < offset)
 		return (NULL);
-
-	/* insert at beginning*/
 	if (idx == offset)
 	{
 		new_node->next = h_node;
@@ -61,7 +56,6 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 			new_node->prev = tmp;
 		}
 	}
-
 	return (new_node);
 }
 
@@ -86,7 +80,7 @@ dlistint_t *create_dnodeint(int n)
 }
 
 /**
- * count_node - counts the number of nodes in a dlistint_t.
+ * count_nodes - counts the number of nodes in a dlistint_t.
  * @h: Pointer to the head node
  * Return: The number of nodes
  */
