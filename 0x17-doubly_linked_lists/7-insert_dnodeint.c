@@ -20,12 +20,12 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	dlistint_t *new_node, *tmp, *h_node = *h;
 	unsigned int offset = 0, count, i = 0;
 
-	/*if (*h == NULL)
-		return (NULL);*/
 	new_node = create_dnodeint(n);
 	count = count_nodes(h_node);
 	if (idx > count || idx < offset)
 		return (NULL);
+	if (*h == NULL && idx == offset)
+		*h = new_node;
 	if (idx == offset)
 	{
 		new_node->next = h_node;
