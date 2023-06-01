@@ -17,44 +17,85 @@
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *new_node, *tmp, *prev, *chk;
-	unsigned int i = 0, j = 0;
+	dlistint_t *new_node, *tmp, *h_node = *h;
+	unsigned int offset = 0, count, i = 0;
 
-	new_node = malloc(sizeof(dlistint_t));
-
-	if (*h == NULL || new_node == NULL)
+	if (*h == NULL && idx != offset)
 		return (NULL);
 
-	new_node->n = n;
-	new_node->next = NULL;
-	new_node->prev = NULL;
+	new_node = create_dnodeint(n);
 
+	count = count_nodes(h_node);
 
-	chk = *h;
-	tmp = *h;
-	while (chk != NULL)
-	{
-		chk = chk->next;
-		i++;
-	}
-	if (idx > i || idx < j)
+	if (idx > count || idx < offset)
 		return (NULL);
-	if (idx == 0)
+
+	/* insert at beginning*/
+	if (idx == offset)
 	{
-		new_node->next = tmp;
+		new_node->next = h_node;
+		h_node->prev = new_node;
 		*h = new_node;
 	}
 	else
 	{
-		for (i = 0; i < idx; i++)
+		tmp = *h;
+		while (tmp->next != NULL)
 		{
+			/* insert at an intermediate position*/
 			if (i == (idx - 1))
-				prev = tmp;
+			{
+				new_node->prev = tmp;
+				tmp->next->prev = new_node;
+				new_node->next = tmp->next;
+				tmp->next = new_node;
+				return (new_node);
+			}
+			i++;
 			tmp = tmp->next;
 		}
+		/* insert at the very end*/
+		if (idx == count)
+		{
+			tmp->next = new_node;
+			new_node->prev = tmp;
+		}
 	}
-	prev->next = new_node;
-	new_node->next = tmp;
 
 	return (new_node);
+}
+
+/**
+ * create_dnodeint - creates a new dlistint_t node.
+ * @n: Data for the created node
+ * Return: The created node or NULL on fail.
+ */
+
+dlistint_t *create_dnodeint(int n)
+{
+	dlistint_t *node = malloc(sizeof(dlistint_t));
+
+	if (node == NULL)
+		return (NULL);
+
+	node->n = n;
+	node->prev = NULL;
+	node->next = NULL;
+
+	return (node);
+}
+
+/**
+ * count_node - counts the number of nodes in a dlistint_t.
+ * @h: Pointer to the head node
+ * Return: The number of nodes
+ */
+
+size_t count_nodes(dlistint_t *h)
+{
+	if (h == NULL)
+		return (0);
+	else
+		return (1 + count_nodes(h->next));
+
 }
