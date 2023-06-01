@@ -25,7 +25,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	if (idx > count || idx < offset)
 		return (NULL);
 	if (*h == NULL && idx == offset)
-		*h = new_node;
+		return (*h = new_node);
 	if (idx == offset)
 	{
 		new_node->next = h_node;
