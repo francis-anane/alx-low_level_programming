@@ -22,16 +22,19 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	if (*head == NULL)
 		return (-1);
 	tmp = *head;
-
 	count = count_nodes(tmp);
-
-	if (index > count || index < offset)
+	if (index > (count - 1) || index < offset)
 		return (-1);
-
 	if (index == 0)
 	{
-		*head = tmp->next;
-		(*head)->prev = NULL;
+		/*Set to delete first node*/
+		if (tmp->next != NULL)
+		{
+			tmp->next->prev = NULL;
+			*head = tmp->next;
+		}
+		else
+			*head = NULL;
 	}
 	else
 	{
@@ -41,11 +44,17 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 				prev = tmp;
 			tmp = tmp->next;
 		}
-		prev->next = tmp->next;
-		tmp->next->prev = prev;
+		/*Set to delete last node*/
+		if (index == (count - 1))
+			tmp->prev->next = NULL;
+		else
+		{
+			/*Set to delete node at intermidiate position*/
+			prev->next = tmp->next;
+			tmp->next->prev = prev;
+		}
 	}
 	free(tmp);
-
 	return (1);
 }
 
