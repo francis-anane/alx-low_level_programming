@@ -4,7 +4,7 @@
  * main - entry point
  * Desc: Prints all possible different combinations of two two-digit numbers
  * Return: 0 (success)
- */  
+ */
 
 int main(void)
 {
