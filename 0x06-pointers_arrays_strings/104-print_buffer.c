@@ -5,6 +5,7 @@
  * @b: Pointer to the buffer
  * @size: Size of the buffer
  */
+
 void print_buffer(char *b, int size)
 {
 	int i, j;
@@ -17,7 +18,7 @@ void print_buffer(char *b, int size)
 
 	for (i = 0; i < size; i += 10)
 	{
-		printf("%08x  ", i);
+		printf("%08x:  ", i);
 
 		for (j = i; j < i + 10; j += 2)
 		{
