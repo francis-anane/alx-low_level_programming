@@ -1,31 +1,34 @@
-/**
-  * main - entry point
-  * Desc: Prints all possible different combinations of three digits
-  * Return: 0 (success)
-  */
-
 #include <stdio.h>
+
+/**
+ * main - entry point
+ * Desc: Prints all possible different combinations of two two-digit numbers
+ * Return: 0 (success)
+ */
 
 int main(void)
 {
-	int i, j, k, l = 99;
+	int i, j;
 
-	for (i = 0; i <= 99; i++)
-		for (j = 0; j <= 99; j++)
-			for (k = 0; k <= 99; k++)
-				for (l = 0; l <= 99; l++)
-				
+	for (i = 0; i < 100; i++)
+	{
+		for (j = 0; j < 100; j++)
+		{
+			if (i < j)
+			{
+				putchar((i / 10) + 48);
+				putchar((i % 10) + 48);
+				putchar(' ');
+				putchar((j / 10) + 48);
+				putchar((j % 10) + 48);
+				if  (i != 98 || j != 99)
 				{
-					putchar(i);
-					putchar(j);
-					putchar(' ');
-					putchar(k);
-					putchar(l);
 					putchar(',');
 					putchar(' ');
 				}
-
+			}
+		}
+	}
 	putchar('\n');
-
 	return (0);
 }
