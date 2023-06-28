@@ -93,11 +93,11 @@ char **strtow(char *str)
 {
 	int in_word = 0, word_index = 0, word_start = 0, count, i, j;
 	char **words;
-	int str_len = _strlen(str), word_length;
+	int str_len = _strlen(str), word_length, blank = 0;
 
-	if (str == NULL || *str == '\0' || ((str_len == 1) && (*str == ' ')))
-		return (NULL);
 	count = word_count(str);
+	if (str == NULL || count == 0)
+		return (NULL);
 	words = malloc((count + 1) * sizeof(char *));
 	if (words == NULL)
 		return (NULL);
