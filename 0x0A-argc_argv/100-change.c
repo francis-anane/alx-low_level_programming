@@ -1,58 +1,61 @@
-/*
- * Author: Francis Ofori Anane
- * Date: 30/09/2022
- */
-
 #include <stdio.h>
 #include <stdlib.h>
 
 /**
-  * main - entry point.
-  * Desc: Prints the minimum number of
-  * coins to make change for an amount
-  * of money.
-  * if the number of arguments passed to
-  * the program is not exactly 1,
-  * print Error, followed by a new line.
-  *
-  * @argc: command line argument count.
-  * @argv: An array of command line
-  * arguments.
-  * Return: 0 (success). 1 (error)
-  */
+ * get_min_coins - Calculates the minimum number of coins required for change.
+ * @cents: The amount in cents.
+ *
+ * Return: The minimum number of coins.
+ */
+int get_min_coins(int cents)
+{
+	if (cents <= 0)
+		return (0);
 
+	int coins[] = {25, 10, 5, 2, 1};
+	int num_coins = sizeof(coins) / sizeof(coins[0]);
+	int min_coins = 0;
+
+	for (int i = 0; i < num_coins; i++)
+	{
+		if (cents >= coins[i])
+		{
+			int count = cents / coins[i];
+
+			min_coins += count;
+			cents -= count * coins[i];
+		}
+	}
+
+	return (min_coins);
+}
+
+/**
+ * main - entry point
+ * @argc: argument count
+ * @argv: argument vector
+ * Decription: print minimum number of coins needed for a change
+ * Return: 0 (success)
+ */
 int main(int argc, char *argv[])
 {
-	int money;
-	int i;
-	int pesewas[6] = {1, 5, 10, 20, 50,
-		100};
-
-	if (argc < 2 || argc > 2)
+	if (argc != 2)
 	{
 		printf("Error\n");
-
 		return (1);
 	}
-	else if (*argv[1] == '-')
+
+	int cents = atoi(argv[1]);
+
+	if (cents < 0)
 	{
 		printf("0\n");
-
 		return (0);
 	}
-	else
-	{
-		money = atoi(argv[1]);
 
-	}
+	int min_coins = get_min_coins(cents);
 
-	for (i = 0; i <= money; i++)
-	{
-		if (money - pesewas[i] >= 0)
-
-			printf("%d\n", pesewas[i]);
-		money -= pesewas[i];
-	}
+	printf("%d\n", min_coins);
 
 	return (0);
 }
