@@ -7,6 +7,22 @@
 #include <stdlib.h>
 
 /**
+ * _strlen - Returns the length of a string
+ * @s: The string
+ *
+ * Return: int (length of s)
+ */
+
+int _strlen(char *s)
+{
+	int len = 0;
+
+	while (s[len] != '\0')
+		len++;
+
+	return (len);
+}
+/**
   * _strdup - Returns a pointer to a newly allocated space in memory,
   * which contains a copy of the string given as a parameter.
   *
@@ -18,24 +34,22 @@
 
 char *_strdup(char *str)
 {
-	int i, length = 1;
+	int i, len;
 	char *copy;
 
 	if (str == NULL)
 		return (NULL);
 
-	for (i = 0; str[i]; i++)
-	{
-		length++;
-	}
+	len = _strlen(str);
 
-	copy = malloc(sizeof(str[0]) * (length + 1));
+	copy = malloc(sizeof(char) * (len + 1));
 
 	if (copy == NULL)
 		return (NULL);
 
-	for (i = 0; i < length; i++)
+	for (i = 0; i < len; i++)
 		copy[i] = str[i];
+	copy[len] = '\0';
 
 	return (copy);
 }
