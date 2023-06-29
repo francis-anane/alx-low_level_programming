@@ -93,7 +93,7 @@ char **strtow(char *str)
 {
 	int in_word = 0, word_index = 0, word_start = 0, count, i, j;
 	char **words;
-	int str_len = _strlen(str), word_length, blank = 0;
+	int str_len = _strlen(str), word_length;
 
 	count = word_count(str);
 	if (str == NULL || count == 0)
