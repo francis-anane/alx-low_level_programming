@@ -10,8 +10,8 @@
  *
  * Return: 0 (success)
  */
- void __attribute__((constructor)) exec_first()
+void __attribute__((constructor)) exec_first()
 {
-    printf("You're beat! and yet, you must allow");
-    printf(",\nI bore my house upon my back!\n");
+	printf("You're beat! and yet, you must allow");
+	printf(",\nI bore my house upon my back!\n");
 }
