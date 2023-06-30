@@ -10,14 +10,12 @@
 size_t print_listint_safe(const listint_t *head)
 {
 	size_t count = 0;
-	long int mem_df;
 
 	while (head)
 	{
-		mem_df = head - head->next;
 		count++;
 		printf("[%p] %d\n", (void *)head, head->n);
-		if (mem_df > 0)
+		if ((head - head->next) > 0)
 			head = head->next;
 		else
 		{
