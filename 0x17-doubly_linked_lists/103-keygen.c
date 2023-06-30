@@ -13,7 +13,7 @@ int main(int __attribute__((__unused__)) ac, char *av[])
 	int i, tmp;
 	int len = strlen(av[1]);
 
-	code = "A-CHRDw87lNS0E9B2TibgpnMVys5XzvtOGJcYLU+4mjW6fxqZeF3Qa1rPhdKIouk";
+	code = "F-CHRDw87lNS0E9B2TibgpnMVys5XzvtOGJcYLU+4mjW6fxqZeF3Qa1rPhdKIouk";
 
 	tmp = (len ^ 59) & 63;
 	passwd[0] = code[tmp];
