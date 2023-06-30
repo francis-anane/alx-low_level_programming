@@ -1,6 +1,4 @@
 #ifndef LINKED_LIST
-#define LINKED_LIST
-
 #include <stdlib.h>
 
 /**
