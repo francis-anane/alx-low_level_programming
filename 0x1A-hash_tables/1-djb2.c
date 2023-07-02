@@ -12,7 +12,7 @@ unsigned long int hash_djb2(const unsigned char *str)
 
 	hash = 5381;
 	for (i = 0; i < len; ++i)
-        	hash = ((hash << 5) + hash) + str[i]; /* hash * 33 + str[i] */
+		hash = ((hash << 5) + hash) + str[i]; /* hash * 33 + str[i] */
 
 	return (hash);
 }
