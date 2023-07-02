@@ -8,7 +8,7 @@
 unsigned long int hash_djb2(const unsigned char *str)
 {
 	unsigned long int hash;
-	int len = strlen(str), i;
+	int len = strlen((const char *) str), i;
 
 	hash = 5381;
 	for (i = 0; i < len; ++i)
