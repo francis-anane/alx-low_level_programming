@@ -2,7 +2,6 @@
  * Author: Francis Ofori Anane
  * Date: 7/10/2022
  */
-
 #include "main.h"
 #include <stdlib.h>
 #include <string.h>
