@@ -16,26 +16,25 @@
  */
 int (*get_op_func(char *s))(int, int)
 {
-	if (s != "+" || s != "-" || s != "*" || s != "/" || s != "%")
-		return (NULL);
-
 	op_t ops[] = {
-
 		{"+", op_add},
-
 		{"-", op_sub},
-
 		{"*", op_mul},
-
 		{"/", op_div},
-
 		{"%", op_mod},
-
 		{NULL, NULL}
 	};
+	int i = 0;
 
-    int i
+	while (ops[i].op)
+	{
+		if (strcmp(ops[i].op, s) == 0)
+		{
+			printf("%s", ops[i].op);
+			return (ops[i].f);
+		}
+		i++;
+	}
 
-
-
+	return (NULL);
 }
