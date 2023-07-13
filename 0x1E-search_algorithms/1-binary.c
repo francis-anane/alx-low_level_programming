@@ -26,11 +26,10 @@ int binary_search(int *array, size_t size, int value)
 		printf("\n");
 
 		if (array[mid] == value)
-			return (int)mid;
+			return (mid);
 
 		else if (array[mid] < value)
 			start = mid + 1;
-		
 		else
 			end = mid - 1;
 	}
