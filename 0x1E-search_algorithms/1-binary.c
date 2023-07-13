@@ -25,9 +25,12 @@ int binary_search(int *array, size_t size, int value)
 
 		printf("\n");
 
-		if (array[mid] == value)
+		if (array[start] == value)
+			return (start);
+		else if (array[end] == value)                                  
+                        return (end); 
+		else if (array[mid] == value)
 			return (mid);
-
 		else if (array[mid] < value)
 			start = mid + 1;
 		else
