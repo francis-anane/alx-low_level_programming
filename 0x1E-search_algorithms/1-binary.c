@@ -14,23 +14,21 @@ int binary_search(int *array, size_t size, int value)
 
 	if (array == NULL || size == 0)
 		return (-1);
-
 	while (start <= end)
 	{
 		mid = (start + end) / 2;
-
 		printf("Searching in array");
 		for (i = start; i <= end; i++)
-			printf("%s %d", (i == 0) ? ":" : ",", array[i]);
+			printf("%s %d", (i == start) ? ":" : ",", array[i]);
 
 		printf("\n");
 
 		if (array[start] == value)
 			return (start);
-		else if (array[end] == value)
-			return (end);
 		else if (array[mid] == value)
 			return (mid);
+		else if (array[end] == value)
+			return (end);
 		else if (array[mid] < value)
 			start = mid + 1;
 		else
